@@ -1,0 +1,95 @@
+.hero {
+    height: 900px;
+    background: linear-gradient(to bottom,
+            #f9e7b4 0%,
+            #ffd000 20%,
+            #ffa000 40%,
+            #ff7a00 60%,
+            #ff3d00 80%,
+            #e60000 100%);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.cat {
+    width: 32px;
+    /* Width of ONE single frame */
+    height: 32px;
+    /* Height of ONE single frame */
+
+    background-image: url('Cat\ Sprite\ Sheet.png');
+    background-repeat: no-repeat;
+
+    /* Zoom in if the cat is too small (optional) */
+    /* image-rendering: pixelated;  */
+    transform: scale(3);
+
+    /* Target a specific row (e.g., the 5th row) */
+    /* Adjust the Y-offset (second value) to pick the row you want */
+    background-position: 0px -128;
+
+    animation: run 0.8s steps(8) infinite;
+}
+
+@keyframes run {
+    from {
+        /* Starting position of the row */
+        background-position: 0px -128px;
+    }
+
+    to {
+        /* Move left by (Frame Width * Total Frames) */
+        /* Example: 32px * 8 frames = 256px */
+        background-position: -256px -128px;
+    }
+}
+
+.cat_2 {
+
+    position: absolute;
+    top: 0px;
+    background-image: url(Cat\ Sprite\ Sheet.png);
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    transform: scale(3);
+
+    background-position: 0px 0px;
+    animation: sit 1s steps(4) infinite;
+}
+
+@keyframes sit {
+    from {
+        background-position: 0 0px;
+    }
+
+    to {
+        background-position: -128px 0px;
+    }
+}
+
+.cat_3{
+    position: absolute;
+    top: 100px;
+
+    background-image: url(Cat\ Sprite\ Sheet.png);
+    width: 32px;
+    height: 32px;
+    transform: scale(3);
+
+    background-position: 0px -256px;
+    animation: dance 1s steps(7) infinite;
+
+}
+
+@keyframes dance {
+    from {
+        background-position: 0px -256px;
+    }
+    to{
+        background-position: -224px -256px;
+    }
+    
+}
